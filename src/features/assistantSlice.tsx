@@ -22,6 +22,9 @@ const assistantSlice = createSlice({
     },
     toggleChatOpened: (state) => {
       state.chatOpened = !state.chatOpened
+    },
+    toggleLoading: (state) => {
+      state.loading = !state.loading
     }
   },
   extraReducers: builder => {
@@ -81,6 +84,7 @@ export const fetchAiStream = createAsyncThunk('assistant/fetchAiStream', async (
             if (data.delta) {
               if (!result) {
                 thunkAPI.dispatch(addMessageToChat({ sender: "assistant", message: result }))
+                thunkAPI.dispatch(toggleLoading())
               }
               result += data.delta
               thunkAPI.dispatch(addAiStream(data.delta))
@@ -97,4 +101,4 @@ export const fetchAiStream = createAsyncThunk('assistant/fetchAiStream', async (
 })
 
 export default assistantSlice.reducer
-export const { addMessageToChat, addAiStream, toggleChatOpened} = assistantSlice.actions
+export const { addMessageToChat, addAiStream, toggleChatOpened, toggleLoading} = assistantSlice.actions

@@ -7,11 +7,7 @@ import {AnimatedTestimonials} from "../components/ui/animated-testimonials.js";
 import {HeroForm} from "../components/chatbot/HeroForm.tsx";
 const emailAddress = "sujith.varug@gmail.com"
 
-type HeroProps = {
-  form: any
-}
-
-const Hero = ({ form }: HeroProps) => {
+const Hero = () => {
 
   const [currentNameText, setCurrentNameText] = useState("")
   const [currentIntroductionText, setCurrentIntroductionText] = useState("")
@@ -85,7 +81,7 @@ const Hero = ({ form }: HeroProps) => {
             </motion.div>
             <motion.p style={{ color: "white"}} className="font-stretch-75% font-light">{currentLocationText}</motion.p>
           </Flex>
-          <HeroForm form={form} />
+          <HeroForm />
           <motion.div
             initial={{
               opacity: 0,

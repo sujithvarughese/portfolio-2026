@@ -31,11 +31,11 @@ export const HeroParallax = ({ images }: {
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
+    useTransform(scrollYProgress, [0, 1], [0, 500]),
     springConfig
   );
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
+    useTransform(scrollYProgress, [0, 1], [0, -500]),
     springConfig
   );
   const rotateX = useSpring(
@@ -68,9 +68,9 @@ export const HeroParallax = ({ images }: {
         }}
         className=""
       >
-        <h1 className="text-5xl md:text-7xl font-bold text-white pb-12">Sample Projects</h1>
+        <h1 className="text-5xl md:text-7xl font-bold text-white pb-12">Sample Work</h1>
 
-        <motion.div className="flex flex-row-reverse space-x-reverse md:space-x-20 mb-4 md:mb-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-4 md:space-x-10 mb-4 md:mb-20 md:gap-10">
           {firstRow.map((image: string) => (
             <ImageCard
               image={image}
@@ -79,7 +79,7 @@ export const HeroParallax = ({ images }: {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row mb-4 md:mb-20 space-x-4 md:space-x-20 ">
+        <motion.div className="flex flex-row mb-4 md:mb-20 space-x-4 md:space-x-10 md:gap-10">
           {secondRow.map((image) => (
             <ImageCard
               image={image}
@@ -88,7 +88,7 @@ export const HeroParallax = ({ images }: {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-4  md:space-x-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse space-x-4  md:space-x-10 md:gap-10">
           {thirdRow.map((image) => (
             <ImageCard
               image={image}
@@ -97,7 +97,7 @@ export const HeroParallax = ({ images }: {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row my-4 md:my-20 space-x-4  md:space-x-20 ">
+        <motion.div className="flex flex-row my-4 md:my-20 space-x-4  md:space-x-10 md:gap-10">
           {fourthRow.map((image) => (
             <ImageCard
               image={image}
@@ -106,7 +106,7 @@ export const HeroParallax = ({ images }: {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse  space-x-4 md:space-x-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse  space-x-4 md:space-x-10 md:gap-10">
           {fifthRow.map((image) => (
             <ImageCard
               image={image}
@@ -115,7 +115,7 @@ export const HeroParallax = ({ images }: {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row my-4 md:my-20  space-x-4 md:space-x-20 ">
+        <motion.div className="flex flex-row my-4 md:my-20  space-x-4 md:space-x-10 md:gap-10 ">
           {sixthRow.map((image) => (
             <ImageCard
               image={image}
@@ -124,7 +124,7 @@ export const HeroParallax = ({ images }: {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse  space-x-4 md:space-x-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse  space-x-4 md:space-x-10 md:gap-10">
           {seventhRow.map((image) => (
             <ImageCard
               image={image}
@@ -133,7 +133,7 @@ export const HeroParallax = ({ images }: {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row my-4 md:my-20 space-x-4 md:space-x-10 ">
+        <motion.div className="flex flex-row my-4 md:my-20 space-x-4 md:space-x-10 md:gap-10 ">
           {eighthRow.map((image) => (
             <ImageCard
               image={image}
@@ -142,7 +142,7 @@ export const HeroParallax = ({ images }: {
             />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse  space-x-4 md:space-x-20">
+        <motion.div className="flex flex-row-reverse space-x-reverse  space-x-4 md:space-x-10 md:gap-10">
           {ninthRow.map((image) => (
             <ImageCard
               image={image}

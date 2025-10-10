@@ -6,9 +6,10 @@ import ChatbotButton from "@/components/chatbot/ChatbotButton.tsx";
 import LoadingMessage from "@/components/chatbot/LoadingMessage.tsx";
 import {Box, Button, Drawer, Flex, TextInput, Title} from "@mantine/core";
 import {fetchAiStream, toggleChatOpened} from "@/features/assistantSlice.tsx";
+import {useForm} from "@mantine/form";
 
 // @ts-ignore
-const ChatbotSidebar = ({ form }) => {
+const ChatbotSidebar = () => {
 
   const chatOpened = useAppSelector(state => state.chatbot.chatOpened)
   const chat = useAppSelector(state => state.chatbot.chat)
@@ -22,6 +23,18 @@ const ChatbotSidebar = ({ form }) => {
       bottomRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [chat, chatOpened]);
+
+  const form = useForm({
+    mode: 'uncontrolled',
+    initialValues: {
+      query: '',
+    }
+  });
+
+  const handleSubmit = () => {
+    dispatch(fetchAiStream(form.getValues().query))
+    form.reset()
+  }
 
   return (
     <>
@@ -42,7 +55,7 @@ const ChatbotSidebar = ({ form }) => {
           </Box>
 
           <Box>
-            <form onSubmit={form.onSubmit((values: any) => dispatch(fetchAiStream(values.query)) & form.reset())}>
+            <form onSubmit={form.onSubmit(handleSubmit)}>
               <Flex direction="column" gap={20}>
                 <Box mx={12}>
                   <TextInput

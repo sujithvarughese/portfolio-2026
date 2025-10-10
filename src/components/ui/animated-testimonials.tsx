@@ -116,16 +116,16 @@ export const AnimatedTestimonials = ({
                 onClick={handlePrev}
                 className="group/button flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
               >
-                <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
+                <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400 z-50" />
               </button>
               <button
                 onClick={handleNext}
                 className="group/button flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
               >
-                <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+                <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400 z-50" />
               </button>
             </div>
-            <motion.p className="text-center mt-8 text-lg text-gray-500 dark:text-neutral-300">
+            <motion.p className="text-center mt-8 text-lg text-gray-500 dark:text-neutral-300 w-sm">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}

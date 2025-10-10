@@ -8,7 +8,6 @@ import {Box, Button, Drawer, Flex, TextInput, Title} from "@mantine/core";
 import {fetchAiStream, toggleChatOpened} from "@/features/assistantSlice.tsx";
 import {useForm} from "@mantine/form";
 
-// @ts-ignore
 const ChatbotSidebar = () => {
 
   const chatOpened = useAppSelector(state => state.chatbot.chatOpened)

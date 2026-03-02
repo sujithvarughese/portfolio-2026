@@ -1,0 +1,4 @@
+{
+  "function": "chat",
+  "path": "/api/chat"
+}
